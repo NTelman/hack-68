@@ -171,8 +171,5 @@ var WildRydes = window.WildRydes || {};
             }
         );
     }
-    function welcomeMessage(event) {
-        var email = $('#emailInputRegister').val();
-        document.getElementById("welcome").innerHTML = "Welcome, " + email;
-    }
+
 }(jQuery));
