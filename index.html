@@ -4,10 +4,12 @@
 	<title>myScheduling revamp</title>
 
 	<link rel="stylesheet" href="main.css">
-	<link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+	<!--tab icon-->
+	<link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
 </head>
 <body>
-	<h1>WELCOME TO THE TEST PAGE</h1>
+	<h1>myScheduling</h1>
 
 	<p>click here to get the contents of the database</p>
 
@@ -19,22 +21,21 @@
 <!--log in-->
 
 	<section class="form-wrap">
-            <h1>Sign In</h1>
+            <h2>SIGN IN</h2>
             <form id="signinForm">
               <input type="email" id="emailInputSignin" placeholder="Email" required>
               <input type="password" id="passwordInputSignin" placeholder="Password" pattern=".*" required>
-
+              </br>
+              </br>
               <input type="submit" value="Sign in">
             </form>
     </section>
-
+    
+<!--
     <p>was sign in successful?</p>
     <p id="sign-in-confirm">maybe...</p>
+-->
 
-</br>
-</br>
-</br>
-</br>
 </br>
 </br>
 </br>
@@ -42,31 +43,25 @@
 <!--register-->
 
 	<section class="form-wrap">
-            <h1>Register</h1>
+            <h2>REGISTER</h2>
             <form id="registrationForm">
               <input type="email" id="emailInputRegister" placeholder="Email" pattern=".*" required>
-              <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
-              <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
 
+              <input type="password" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
+  
+              <input type="password" id="password2InputRegister" placeholder="Confirm Password" pattern=".*" required>
+          </br>  
+          </br>
               <input type="submit" value="ENTER">
             </form>
     </section>
-
-
-
-
 
 		<script src="js/copied/jquery-3.1.0.js"></script>
         <script src="js/copied/bootstrap.min.js"></script>
         <script src="js/copied/aws-cognito-sdk.min.js"></script>
         <script src="js/copied/amazon-cognito-identity.min.js"></script>
         <script src="js/copied/config.js"></script>
-        <script src="js/copied/cognito-auth.js"></script>    
-
-<!-- pool id = us-east-1_9SVTLhUi1
-	 app client id = 2ro0n4c52drpahv75n1edipv3b
- -->
-
+        <script src="js/copied/cognito-auth.js"></script>
 
 </body>
 </html>

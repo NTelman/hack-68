@@ -1,5 +1,63 @@
 body {
-	font-family: 'Mulish', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	color: #446082;
+	font-size: 20px;
 }
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 48px;
+}
+
+h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 36px;
+}
+
+button {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #446082;
+	padding: 10px;
+	border: none;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+input[type=submit] {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #446082;
+	border: none;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+form {
+	text-align: center;
+}
+
+input[type=email] {
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border-color: #446082;
+	border-width: 1px;
+}
+input[type=password] {
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border-color: #446082;
+	border-width: 1px;
+}
+/*
+label {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}*/
