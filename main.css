@@ -32,6 +32,11 @@ button {
 	font-weight: bold;
 }
 
+form {
+	text-align: center;
+}
+
+
 input[type=submit] {
 	font-family: 'Montserrat', sans-serif;
 	background-color: #446082;
@@ -43,27 +48,30 @@ input[type=submit] {
 }
 
 
-form {
-	text-align: center;
-}
-
 input[type=email] {
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
-	border-color: #446082;
-	border-width: 1px;
+	border: none;
+	border-bottom: 2px solid #F0F0F2;
+	width: 60%;
 }
 input[type=password] {
 	padding: 12px 20px;
 	margin: 8px 0;
 	box-sizing: border-box;
-	border-color: #446082;
-	border-width: 1px;
+	border: none;
+	border-bottom: 2px solid #F0F0F2;
+	width: 60%;
 }
-/*
-label {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: bold;
-	font-size: 20px;
-}*/
+
+.back {
+	text-align: left;
+	position: absolute;
+  	bottom: 10px;
+}
+
+
+
+
+
