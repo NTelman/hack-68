@@ -3,7 +3,7 @@
 var WildRydes = window.WildRydes || {};
 
 (function scopeWrapper($) {
-    var signinUrl = '/signin.html';
+    var signinUrl = '/index.html';
 
     var poolData = {
         UserPoolId: _config.cognito.userPoolId,
@@ -170,5 +170,9 @@ var WildRydes = window.WildRydes || {};
                 alert(err);
             }
         );
+    }
+    function welcomeMessage(event) {
+        var email = $('#emailInputRegister').val();
+        document.getElementById("welcome").innerHTML = "Welcome, " + email;
     }
 }(jQuery));
