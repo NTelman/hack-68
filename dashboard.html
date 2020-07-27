@@ -27,7 +27,7 @@
         success: function(data){
           $('#job_data_returned').html('');
           data.Items.forEach(function(JobsItem){
-            $('#job_data_returned').append('<p id="bolded-title">' + JobsItem.JobName + ' - ' + JobsItem.JobDescription + '</p>' + '</br>' + '<p>' + JobsItem.JobLevel + '</br>' + JobsItem.JobReq + '</br>' + JobsItem.JobLocation + '</p>');
+            $('#job_data_returned').append('<p id="bolded-title">' + JobsItem.JobName + ' - ' + JobsItem.JobDescription + '</p>' + '<p>' + JobsItem.JobLevel + '</br>' + JobsItem.JobReq + '</br>' + JobsItem.JobLocation + '</p>');
           })
         }
       });

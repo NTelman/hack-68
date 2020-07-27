@@ -76,13 +76,12 @@ input[type=password] {
 /*-----DASHBOARD-----*/
 #job_data_returned {
 	text-align: left;
-	margin-left: 7%;
+	margin-left: 5%;
 }
 
 #bolded-title {
 	text-align: left;
 	font-weight: bold;
-	margin-left: 5%;
 }
 
 
