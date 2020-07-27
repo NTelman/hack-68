@@ -31,11 +31,13 @@
 
   <a href="index.html"><p class="back">&#8592; return to sign in</p></a>
 
+  <script src="https://ajax.googleapis.com.ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 
   <script type="text/javascript">
-    var URL = 'https://6vuvd93lc4.execute-api.us-east-1.amazonaws.com/prod/requestjob';
-
-    $('#button_get_data').on('click', function(){
+    var URL = 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries';
+    //$('#button_get_data').on('click', function()
+    $(document).ready(function(){
       $.ajax({
         type: 'GET',
         url: URL,
@@ -43,8 +45,8 @@
         success: function(data){
           $('#job_data_returned').html('');
 
-          data.Items.forEach(function(jobsItem){
-            $('#job_data_returned').append('<p>' + jobsItem.JobName + '</p>');
+          data.Items.forEach(function(JobsItem){
+            $('#job_data_returned').append('<p>' + JobsItem.JobName + '</p>');
           })
         }
       });
