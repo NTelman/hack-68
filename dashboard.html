@@ -8,10 +8,7 @@
     <!--tab icon-->
   <link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
 
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
 </head>
 <body>
 	<h1>myScheduling Dashboard</h1>
@@ -23,26 +20,19 @@
   <p id="job_data_returned"></p>
 
   <script type="text/javascript">
-
-    //var URL = 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries';
     $('#button_get_data').on('click', function() {
-    //$(document).ready(function(){
       $.ajax({
         type: 'GET',
         url: 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries',
-
         success: function(data){
           $('#job_data_returned').html('');
-
           data.Items.forEach(function(JobsItem){
-            $('#job_data_returned').append('<p>' + JobsItem.JobName + ' - ' + JobsItem.JobDescription + '</p>');
+            $('#job_data_returned').append('<p id="bolded-title">' + JobsItem.JobName + ' - ' + JobsItem.JobDescription + '</p>' + '</br>' + '<p>' + JobsItem.JobLevel + '</br>' + JobsItem.JobReq + '</br>' + JobsItem.JobLocation + '</p>');
           })
         }
       });
       return false;
     });
-    
-
   </script>
 
 
