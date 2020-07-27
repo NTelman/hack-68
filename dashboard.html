@@ -20,39 +20,18 @@
 
 	<p>click here to get the contents of the database</p>
 
-	<button id="button_get_data" onclick="loadJobs()">CLICK ME</button>
+	<p><button id="button_get_data" onclick="loadJobs()">CLICK ME</button></p>
 
-  <p id="job_data_returned"></p>
+  <p id="job_data_returned">Jobs : </p>
 
-</br></br></br>
+  <script type="text/javascript">
 
-  <button onclick="testFunction()">test</button>
-
-  <script>
-
-    function loadJobs() {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("job_data_returned").innerHTML = this.responseText;
-        };
-      
-      xhttp.open("GET", url, true);
-      xhttp.send();
-    }
-
-
-    function testFunction() {
-      document.getElementById("job_data_returned").innerHTML = "testing";
-    }
-
-    /*
-    var URL = 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries';
+    //var URL = 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries';
     //$('#button_get_data').on('click', function()
     $(document).ready(function(){
       $.ajax({
         type: 'GET',
-        url: URL,
+        url: 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries',
 
         success: function(data){
           $('#job_data_returned').html('');
@@ -62,9 +41,8 @@
           })
         }
       });
-      return false;
     });
-    */
+    
 
   </script>
 
