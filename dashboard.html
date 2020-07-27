@@ -7,20 +7,22 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     <!--tab icon-->
   <link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 </head>
 <body>
 	<h1>myScheduling Dashboard</h1>
 
-  <p>You have been successfully signed in!</p>
-
-  </br>
   </br>
 
 	<p>click here to get the contents of the database</p>
 
-	<button id="button_get_data" onclick="loadJobs("https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries", myfunction1)>CLICK ME</button>
+	<button id="button_get_data" onclick="loadJobs()">CLICK ME</button>
 
-  <div id="job_data_returned"></div>
+  <p id="job_data_returned"></p>
 
 </br></br></br>
 
@@ -28,21 +30,16 @@
 
   <script>
 
-    function loadJobs(url, cFunction) {
+    function loadJobs() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          cFunction(this);
+          document.getElementById("job_data_returned").innerHTML = this.responseText;
         };
       
       xhttp.open("GET", url, true);
       xhttp.send();
     }
-
-    function myfunction1(xhttp) {
-      document.getElementById("job_data_returned").innerHTML = xhttp.responseText;
-    }
-
 
 
     function testFunction() {
