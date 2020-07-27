@@ -18,17 +18,15 @@
 
   </br>
 
-	<p>click here to get the contents of the database</p>
+	<p><button id="button_get_data">VIEW ALL AVAILABLE PROJECTS</button></p>
 
-	<p><button id="button_get_data" onclick="loadJobs()">CLICK ME</button></p>
-
-  <p id="job_data_returned">Jobs : </p>
+  <p id="job_data_returned"></p>
 
   <script type="text/javascript">
 
     //var URL = 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries';
-    //$('#button_get_data').on('click', function()
-    $(document).ready(function(){
+    $('#button_get_data').on('click', function() {
+    //$(document).ready(function(){
       $.ajax({
         type: 'GET',
         url: 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries',
@@ -37,10 +35,11 @@
           $('#job_data_returned').html('');
 
           data.Items.forEach(function(JobsItem){
-            $('#job_data_returned').append('<p>' + JobsItem.JobName + '</p>');
+            $('#job_data_returned').append('<p>' + JobsItem.JobName + ' - ' + JobsItem.JobDescription + '</p>');
           })
         }
       });
+      return false;
     });
     
 
