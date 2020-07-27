@@ -18,21 +18,35 @@
 
 	<p>click here to get the contents of the database</p>
 
-	<button id="button_get_data" onclick="loadJobs()">CLICK ME</button>
+	<button id="button_get_data" onclick="loadJobs("https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries", myfunction1)>CLICK ME</button>
 
-  <div id="demo"></div>
+  <div id="job_data_returned"></div>
+
+</br></br></br>
+
+  <button onclick="testFunction()">test</button>
 
   <script>
 
-    function loadJobs() {
+    function loadJobs(url, cFunction) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("demo").innerHTML = this.responseText;
+          cFunction(this);
         };
       
-      xhttp.open("GET", "https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries", true);
+      xhttp.open("GET", url, true);
       xhttp.send();
+    }
+
+    function myfunction1(xhttp) {
+      document.getElementById("job_data_returned").innerHTML = xhttp.responseText;
+    }
+
+
+
+    function testFunction() {
+      document.getElementById("job_data_returned").innerHTML = "testing";
     }
 
     /*
@@ -57,18 +71,10 @@
 
   </script>
 
-  <button>test</button>
-
-  <div id="job_data_returned">
-    
-  </div>
-
 
 </br>
 
   <a href="index.html"><p class="back">&#8592; return to sign in</p></a>
-
-  
 
 
 	<script src="js/copied/jquery-3.1.0.js"></script>
