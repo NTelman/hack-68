@@ -11,8 +11,6 @@
 <body>
 	<h1>myScheduling Dashboard</h1>
 
-  <p>hi dad</p>
-
   <p>You have been successfully signed in!</p>
 
   </br>
@@ -20,7 +18,7 @@
 
 	<p>click here to get the contents of the database</p>
 
-	<button id="button_get_data">CLICK ME</button>
+	<button id="button_get_data" onclick="loadJobs()">CLICK ME</button>
 
   <div id="job_data_returned">
     
@@ -35,6 +33,19 @@
 
 
   <script type="text/javascript">
+
+    function loadJobs() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML = this.responseText;
+        };
+      
+      xhttp.open("GET", "https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries", true);
+      xhttp.send();
+    }
+
+    /*
     var URL = 'https://q2zt1aosf3.execute-api.us-east-1.amazonaws.com/prod/job-entries';
     //$('#button_get_data').on('click', function()
     $(document).ready(function(){
@@ -52,6 +63,8 @@
       });
       return false;
     });
+    */
+
 
   </script>
 
