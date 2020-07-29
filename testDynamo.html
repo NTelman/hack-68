@@ -1,0 +1,54 @@
+<!-- 
+  Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ 
+  This file is licensed under the Apache License, Version 2.0 (the "License").
+  You may not use this file except in compliance with the License. A copy of
+  the License is located at
+ 
+  http://aws.amazon.com/apache2.0/
+ 
+  This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, either express or implied. See the License for the
+  specific language governing permissions and limitations under the License.
+-->
+<html>
+<head>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+
+<script>
+AWS.config.region = 'us-east-1'; // Region
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-east-1:6ad43c28-7886-4b07-82bb-d9ddc8eea294',
+
+var docClient = new AWS.DynamoDB.DocumentClient();
+
+function readItem() {
+    var table = "employees";
+    var username = "user-1";
+
+    var params = {
+        TableName: table,
+        Key:{
+            "username": username,
+        }
+    };
+
+    docClient.get(params, function(err, data) {
+        if (err) {
+            document.getElementById('textarea').innerHTML = "Unable to read item: " + "\n" + JSON.stringify(err, undefined, 2);
+        } else {
+            document.getElementById('textarea').innerHTML = "GetItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
+        }
+    });
+}
+
+</script>
+</head>
+
+<body>
+<input id="readItem" type="button" value="Read Item" onclick="readItem();" />
+<br><br>
+<p>hi</p>
+<textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
+
+</body>
+</html> 

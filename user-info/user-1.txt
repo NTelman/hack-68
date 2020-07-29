@@ -1,7 +1,1 @@
-fake@fake.com
-Natalie
-Eichorn
-11
-Software Engineer
-Atlanta
-Javascript, Project Management, AWS
+fake@fake.com;Natalie;Eichorn;11;Software Engineer;Atlanta;Javascript, Project Management, AWS

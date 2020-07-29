@@ -5,38 +5,68 @@
 
 	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
-    <!--tab icon-->
+  <!--tab icon-->
   <link rel="shortcut icon" type="image/x-icon" href="icon.png"/>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!--<script type="text/javascript" src="js/profile.js"></script>-->
+  <!--AWS SDK-->
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.721.0.min.js"></script>
 </head>
 <body>
 	<h1>myScheduling Dashboard</h1>
 
-
   <div class="profile">
-    <p id="tester"></p>
-    <!--<p><button id="clickme">click</button></p>-->
+    <p id="profile-info"></p>
+    
+  </div>
 
+  <p id="skillstoinput">AWS</p>
+</br>
+  <p id="skills-list2">Skills: </p>
+
+  <div class="jobInfo">
+    <h1>jobs returned :</h1>
+    <p id="jobreturn"></p>
+    <button id="jobbutton">click for job match</button>
   </div>
 
   <script>
-    
-      
-      $(document).ready(function() {
+
+    var skillsList = [];
+    var str;
+
+    $(document).ready(function() {
       $.ajax({
         type: 'GET',
-        url: 'https://2ipl6j28l8.execute-api.us-east-1.amazonaws.com/prod/employee-access',
+        url: 'https://lr6c1g83hb.execute-api.us-east-1.amazonaws.com/prod/user',
         success: function(data){
-          $('#tester').html('');
-          data.Items.forEach(function(employeesItem){
-            $('#tester').append('<p id="bolded-title">' + employeesItem.name + ' - ' + employeesItem.title + ' (' + employeesItem.level + ')' + '</p>' + '<p>' + employeesItem.location + '</br>' + employeesItem.skills + '</p>');
-          })
+          $('#profile-info').append('<p id="bolded-title">' + data.Item.name + ' - ' + data.Item.title + ' (' + data.Item.level + ')' + '</p>' + '<p>' + data.Item.location + '</br>' + data.Item.skills + '</p>');
+
+          str = data.Item.skills;
+
+          skillsList = str.toString().split(',');
+
+          var arrayLength = skillsList.length;
+          for (var i = 0; i < arrayLength; i++) {
+              console.log(skillsList[i]);
+              $('#skills-list2').append('<p>' + skillsList[i] + '</br>' + '</p>');   
+          }
+
         }
       });
+      return false;
     });
+
   </script>
+
+  <script src="findMatch.js"></script>
+
+
+
+
+
+</br>
+</br>
+
 
 
 
